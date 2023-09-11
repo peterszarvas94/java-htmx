@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Thymeleaf</title>
+  <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+</head>
+
+<body>
+  <h1>Java &lt;3 HTMX</h1>
+  <form hx-post="/items" hx-target="#items" hx-swap="beforeend">
+    <input type="text" name="text" placeholder="Enter text">
+    <button type="submit">Add</button>
+  </form>
+  <button hx-get="/items" hx-target="#items" hx-swap="innerHTML">Refresh</button>
+
+  <ul id="items">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</body>
+
+</html>
